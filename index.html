@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <style>
+      p {
+        color: blue;
+      }
+
+      #canvas {
+        height: 200px;
+        width: 300px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">Hello world</p>
+    <button id="btn">Click me</button>
+
+    <div id="canvas"></div>
+
+    <script>
+      var button = document.getElementById("btn");
+      var text = document.getElementById("text");
+      var canvas = document.getElementById("canvas");
+
+      var isInital = true;
+
+      button.onclick = function () {
+        if (isInital) {
+          text.innerText = "Bye...";
+          isInital = false;
+        } else {
+          text.innerHTML = "Hello World";
+          isInital = true;
+        }
+      };
+
+      canvas.onmouseenter = function () {
+        canvas.style.backgroundColor = "red";
+        setTimeout(() => {
+          canvas.style.backgroundColor = "white";
+        }, 3000);
+      };
+
+      // button.addEventListener("click", function () {
+      //   alert(1);
+      // });
+    </script>
+  </body>
+</html>
